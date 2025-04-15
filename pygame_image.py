@@ -18,9 +18,12 @@ def main():
 
     tmr = 0
     while True:
+        x = tmr%3200
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         
+        kouka_rct.move_ip((-1,0))
+
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
             kouka_rct.move_ip((0,-1))
@@ -29,8 +32,7 @@ def main():
         if key_lst[pg.K_LEFT]:
             kouka_rct.move_ip((-1,0))
         if key_lst[pg.K_RIGHT]:
-            kouka_rct.move_ip((+1,0))
-        x = tmr%3200
+            kouka_rct.move_ip((+2,0))
         screen.blit(bg_img, [-x, 0])
         screen.blit(flipped1, [-x+1600, 0])
         screen.blit(bg_img, [-x+3200, 0])

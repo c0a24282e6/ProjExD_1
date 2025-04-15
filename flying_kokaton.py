@@ -22,20 +22,19 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        kx = 0
+        kx = -1
         ky = 0
         
-        kouka_rct.move_ip((-1,0))
 
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
-            ky=-1
+            ky= -1
         elif key_lst[pg.K_DOWN]:
-            ky=+1
+            ky= +1
         elif key_lst[pg.K_LEFT]:
-            kx=-1
+            kx+= -1
         elif key_lst[pg.K_RIGHT]:
-            kx=+2
+            kx= +2
         kouka_rct.move_ip((kx,ky))
         
         screen.blit(bg_img, [-x, 0])
